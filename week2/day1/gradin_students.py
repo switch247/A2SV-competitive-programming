@@ -16,12 +16,7 @@ import sys
 def gradingStudents(grades):
     # Write your code here
     
-    for i in range(len(grades)):
-        diff = 5- grades[i]%5
-        if grades[i] >= 40 and diff < 3:
-            grades[i] += diff
-            
-    return grades;
+    
             
         
 
