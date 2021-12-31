@@ -24,7 +24,7 @@ for i in range(len(s)-1, -1, -1):
         tot -= x[s[i]]
     
     previous = x[s[i]]
-    #previous == 0,i,i_1,i-2 updated each time
+    #previous == 0,i,i-1,i-2 updated each time
  
 print(tot)
 
