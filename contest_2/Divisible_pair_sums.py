@@ -18,12 +18,12 @@ from itertools import combinations
 
 def divisibleSumPairs(n, k, ar):
     # Write your code here
-    res = []
+    res = 0
     for i in range(n):
         for j in range(i+1,n):
             if (ar[i]+ar[j])% k == 0:
-                res.append([ar[i],ar[j]])
-    return( len(res) )
+                res+=1
+    return( res )
   #what better time to use combinations, i recomend not doing it 
    ''' count = 0
     ar.sort()
