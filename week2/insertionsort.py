@@ -1,3 +1,4 @@
+#the hacker rank version is so dumb ;why not use actual insertion sort 
 a = [1,4,8,6,3,7]
 for i in range(1,len(a)):
     val = a[i]
