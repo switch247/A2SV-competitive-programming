@@ -9,3 +9,21 @@ for i in range(1,len(a)):
         #b/c i-1 can go tp -ve index (i>0)
 print(a)        
 # pointer at index one and shift left and compare each adjesent value
+'''
+def insertionSort1(n, arr):
+    # Write your code here
+    swallowed = arr[-1]
+    
+    for i in range(len(arr)-2, -1, -1):
+        if arr[i] > swallowed:
+            arr[i+1] = arr[i]
+            print(*arr)
+        else:
+            arr[i+1] = swallowed
+            print(*arr)
+            break
+    if arr[0] > swallowed:
+        arr[0] = swallowed
+        print(*arr)
+
+'''
