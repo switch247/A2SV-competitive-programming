@@ -9,3 +9,4 @@ def countingSort(arr):
             t +=((str(i)+" ")*k[i])
     return t.strip().split(" ")
 #convert to string to make life easier
+#.strip removes stuff from the end #split every where
