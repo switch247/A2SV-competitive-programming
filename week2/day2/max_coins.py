@@ -15,7 +15,7 @@ class Solution:
             left+=1
             right-=2
         return r'''
-    
+    #bob takes the absolute minimum
         
                      
         
