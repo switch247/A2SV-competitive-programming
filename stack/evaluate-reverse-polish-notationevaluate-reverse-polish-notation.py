@@ -8,7 +8,7 @@ class Solution:
                 if(i == '+'): S[-1] += t
                 elif(i == '-'): S[-1] -= t
                 elif(i == '*'): S[-1] *= t
-                else: S[-1] = int(float(S[-1])/t)
+                else: S[-1] = int((S[-1])/t) #int(6.6) aprox 6 wrong other wise
             else:
                 S.append(int(i))
         return S[0]
