@@ -6,6 +6,7 @@ class Solution:
         #if the cars time is => time for the last merge the two cars
         # if a car arives at time greater than the top cars speed add 1 more fleet(apend to stalk)
         #lamda i : target-cars[i][0])/cars[i][-1]
+        # simply put put the time it takes each car to reac the target and sort them according to their starting position
         cars=[]
         for i in range(len(position)):
             cars.append((position[i],speed[i]))
