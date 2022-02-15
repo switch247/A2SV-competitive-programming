@@ -1,6 +1,8 @@
 class MyCircularDeque:
     #append left
     #deque(maxsize=x) x is max size of deque ,the rest is simple
+    #isFull() => len(self.deque)==k
+    #isEmpty() => len(self.deque)==0 => if not self.deque
 
     def __init__(self, k: int):
         self.deque = deque(maxlen=k)
