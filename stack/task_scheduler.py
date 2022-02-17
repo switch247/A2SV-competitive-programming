@@ -7,6 +7,7 @@ class Solution:
         q = deque() #[-c,idletime]
         while maxheap or q: #while these are not empty there are tasks left to do
             time+=1
+            #move the task back and forth between maxheap and q until freq of the task= 0
             if maxheap:
                 c = 1 + heapq.heappop(maxheap)  #popleft basicaly /heappop/
                 if c: #if c isnt zero
