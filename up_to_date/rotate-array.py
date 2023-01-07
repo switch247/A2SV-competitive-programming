@@ -13,7 +13,9 @@ class Solution:
        k=4
        len(nums)= 9
        4%9 =4
-       why is it necessary ?????????? haaaaaaaa
+       k=10
+       len(nums)= 7
+       10 % 7 = 3 it is not guarenteed that k is greater than lenght
        
        """
         
