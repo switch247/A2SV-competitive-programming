@@ -9,8 +9,7 @@ class Solution:
                 return i
             left +=nums[i]
         return -1
-/*
-
+"""
 #very slow
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
@@ -21,6 +20,6 @@ class Solution:
 
 
 
-*/
+"""
         
         
