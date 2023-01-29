@@ -10,10 +10,9 @@ class Solution:
 
         def choose(left, right):
             if left==right:
-                return nums[left] # when finished choosing
+                return nums[left] # when finished choosing(1 choice left)
             if (left, right) in cache:
-                # If this query has been computed before
-                # directly return by cache table
+                # If this  has been computed before
                 return cache[ (left, right) ]
             
             left_choose = nums[left] - choose(left+1, right)
