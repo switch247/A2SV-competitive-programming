@@ -3,13 +3,6 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        n = len(matrix)
-        # n x n
+        # transpose-> reverse each row
+        matrix[:] = [x[::-1] for x in list(zip(*matrix))]
 
-        matrix.reverse()
-        for i in range( n ):
-            for j in range(i, n):
-                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-                # this works only for n*n matrices
-
-        
