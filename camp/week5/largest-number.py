@@ -6,7 +6,7 @@ class Solution:
                 p2=str(nums[j])+str(nums[i])
                 if p1 < p2:
                     nums[i],nums[j]=nums[j],nums[i]
-        result=""
-        for i in nums:
-            result+=str(i)
-        return str(int(result)) # this removes'0' from '00' 
+
+        
+        return  str(int("".join(list(map(str,nums))))) 
+        # this removes'0' from '00' 
