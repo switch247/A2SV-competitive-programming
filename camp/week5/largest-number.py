@@ -1,12 +1,26 @@
+from functools import cmp_to_key
 class Solution:
-    def largestNumber(self, nums: List[int]) -> str:
-        for i in range(len(nums)):
-            for j in range(i+1,len(nums)):
-                p1=str(nums[i])+str(nums[j])
-                p2=str(nums[j])+str(nums[i])
-                if p1 < p2:
-                    nums[i],nums[j]=nums[j],nums[i]
+    def largestNumber(self, nums: list[int]) -> str:
+        nums = [str(i) for i in nums]
+        
+        # bubble
+        # for i in range( len(nums) ):
+        #     for j in range( len(nums) - 1 -i ):
+        #         if nums[j] + nums[j+1] < nums[j+1] + nums[j]:
+        #             nums[j] , nums[j+1] = nums[j+1], nums[j]
+
 
         
-        return  str(int("".join(list(map(str,nums))))) 
-        # this removes'0' from '00' 
+        
+        def compare(n1, n2):
+            if n1 + n2 > n2 + n1:
+                return -1
+            elif n1 < n2:
+                return 1
+            else:
+                return 0
+
+        nums = sorted(nums, key=cmp_to_key(compare))
+
+        return str(int(''.join(nums)))
+        
