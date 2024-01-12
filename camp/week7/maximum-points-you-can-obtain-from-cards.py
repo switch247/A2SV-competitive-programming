@@ -1,16 +1,15 @@
 class Solution:
     def maxScore(self, cardPoints: List[int], k: int) -> int:
-        for i in range(1,len(cardPoints) ):
-            cardPoints[i] += cardPoints[i-1]
-        tot = cardPoints[-1]
-        if k == len(cardPoints): return tot
-        #max score= tot- minsubstring        
-        window = len(cardPoints) - k
-        print(cardPoints)
-        min_sum= cardPoints[window-1] 
-        # print(min_sum)
-        for i in range(1, len(cardPoints)-window+1):
-            # print(cardPoints[i+window-1] -cardPoints[i-1])
-            min_sum= min(min_sum, cardPoints[i+window-1] -cardPoints[i-1]  )
-            
-        return cardPoints[-1] - min_sum
+        reverse_winsize =  len(cardPoints) -  k
+        tot  = sum(cardPoints)
+        left = 0
+        if reverse_winsize==0: return tot
+        ans = float('inf')
+        ss = 0
+        for right in range( len(cardPoints) ):
+            ss+=cardPoints[right]
+            if right-left + 1 == reverse_winsize:
+                ans = min (ans, ss )
+                ss-=cardPoints[left]
+                left+=1
+        return tot - ans
