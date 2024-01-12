@@ -4,9 +4,9 @@ class Solution:
         ans = 0
         n = len(fruits)
         right=left=0
-        x={}
+        x=defaultdict(lambda:0)
         for right,val in enumerate(fruits):
-            x[val]= x.get(val,0) + 1
+            x[val]+= 1
             while len(x) > 2:
                 x[ fruits[left] ] -= 1
                 if x[fruits[left] ] == 0:
