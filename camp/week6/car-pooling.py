@@ -3,16 +3,15 @@ class Solution:
         #decrease capacity when you pick someone up
         #increase when dropping off
         #if you go over capacity limit False 
-        lst = []
+        # 1 <= trips.length <= 1000
+        pick_and_drop_time = [0] * 1003
         for n, start, end in trips:
-            lst.append((start, n))
-            lst.append((end, -n))
-        lst.sort()
-        # print(lst)
+            pick_and_drop_time[start] += n
+            pick_and_drop_time[end] -= n
+        # print(pick_and_drop_time)
         tot_passengers = 0
-        for loc in lst:
-            tot_passengers += loc[1]
-            #print(pas)
+        for passenger in pick_and_drop_time:
+            tot_passengers += passenger
             if tot_passengers > capacity:
                 return False
         return True
