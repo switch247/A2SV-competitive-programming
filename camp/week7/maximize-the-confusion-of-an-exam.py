@@ -1,15 +1,19 @@
 class Solution:
     def maxConsecutiveAnswers(self, answerKey: str, k: int) -> int:
-        max_freq = i = 0
-        char_count = collections.Counter()
-
-        for j in range(len(answerKey)):
-
-            char_count[answerKey[j]] += 1
-            max_freq = max(max_freq, char_count[answerKey[j]])
-
-            if j - i + 1 > max_freq + k:
-                char_count[answerKey[i]] -= 1
-                i += 1
-
-        return len(answerKey) - i
+        n = len(answerKey)
+        ans = 0
+        for x in "TF":
+            left ,  right = 0 , 0
+            tolerance = k
+            # consecutive t's or f's
+            while right < n:
+                if answerKey[right] !=x:
+                    tolerance-=1
+                while tolerance < 0:
+                    ans = max(ans, right - left )
+                    if answerKey[left] !=x:
+                        tolerance+=1
+                    left +=1
+                right += 1
+            ans = max(ans, right - left )
+        return ans
