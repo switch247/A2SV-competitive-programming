@@ -4,15 +4,15 @@ class Solution:
         #increase when dropping off
         #if you go over capacity limit False 
         lst = []
-        for [n, start, end] in trips:
+        for n, start, end in trips:
             lst.append((start, n))
             lst.append((end, -n))
         lst.sort()
-        #print(lst)
-        pas = 0
+        # print(lst)
+        tot_passengers = 0
         for loc in lst:
-            pas += loc[1]
+            tot_passengers += loc[1]
             #print(pas)
-            if pas > capacity:
+            if tot_passengers > capacity:
                 return False
         return True
