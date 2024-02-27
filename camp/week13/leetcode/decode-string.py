@@ -4,30 +4,31 @@ class Solution:
             return x
         return x + self.concact(x, n-1)
     def decodeString(self, s: str) -> str:
-        x = self.concact( "x", 3 )
-        print( x )
         stack = []
-        ans=""
-        num = 0
-        for ch in s:
-            # print(stack,sub,num)
+        def recurser(idx, sub, num=0):
+            # print('called')
+            if idx >= len(s):
+                return sub
+            ch = s[idx]
             if ch == '[':
-                stack.append( (ans, num) )
-                ans, num = '', 0
+                stack.append( (sub, num) )
+                sub, num = '', 0
             elif ch == ']':
                 # [a] ==not posible num[x]
                 prev_sub, repeat_times = stack.pop()
-                # just because i wanted to use recursion some where
-                ans = prev_sub + self.concact(ans,repeat_times)
+                # just because i wanted to use recursion some where else
+                sub = prev_sub + self.concact(sub, repeat_times)
             elif ch.isdigit():
                 # 32[a]
                 # 3 -> 2 -> [ -> a -> ]
                 num = num*10 + int(ch)
             else:
-                ans+= ch
+                sub+= ch
+            
+            return recurser(idx+1, sub, num)
+        
+        return recurser(0,'',0)
 
-
-                
-        return ans
-
-
+        # return ans
+# s[i]
+# 
