@@ -23,3 +23,21 @@ class Solution:
         ans = []
         backtrack(1,[])
         return ans
+
+        # method 2
+        # def backtrack (i, path):
+        #     if len(path) == k:
+        #         ans.append(path[:])
+        #         return 
+        #     if  i <= n:
+        #         # choose
+        #         path.append(i)
+        #         backtrack(i+1, path)
+        #         # do not choose
+        #         path.pop()
+        #         backtrack(i+1, path)
+        #     return
+
+        # ans = []
+        # backtrack(1,[])
+        # return ans
