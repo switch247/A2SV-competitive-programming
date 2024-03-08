@@ -1,10 +1,10 @@
 class Solution:
     def longestNiceSubstring(self, s: str) -> str:
         
-        seen = set(s)
+        all = set(s)
         ans = []
         for i in range(len(s)):
-            if s[i].swapcase() in seen:
+            if s[i].swapcase() in all:
                 ans.append( s[i])
             else: 
                 # print(s[i], 'nocounterpart-> reset')
