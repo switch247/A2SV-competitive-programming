@@ -23,7 +23,7 @@ class Solution:
                 board[i][j] = 'B'
                 for dx,dy in drxn:
                     x,y  = i+dx, dy+j
-                    if inbound(x,y)  and board[x][y]== 'E' and  (x,y) not in vis:
+                    if inbound(x,y)  and  (x,y) not in vis:
                         dfs(x,y)
             else:
                 board[i][j] = str(board[i][j])
