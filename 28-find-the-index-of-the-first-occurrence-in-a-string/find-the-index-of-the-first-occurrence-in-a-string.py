@@ -18,7 +18,7 @@ class Solution:
         return lps
     def strStr(self, haystack: str, needle: str) -> int:
         LPS = self.KMP_part_one(needle)
-        print(LPS)
+        # print(LPS)
         l, r = 0,0
         while r < len(haystack):
             if needle[l] == haystack[r]:
